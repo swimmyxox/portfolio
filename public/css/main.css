@@ -6,8 +6,8 @@ html {
   font-size: 62.5%; }
 
 body {
-  height: 100%;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   color: #fff;
   font: 1.6rem "Yrsa", serif;
   font-weight: 300;
@@ -17,23 +17,10 @@ body {
   background-color: #b3b5d5;
   background-image: url("../images/background_large.jpg");
   background-size: cover;
-  background-position: 100% 0;
-  opacity: 0;
-  -webkit-animation: 2.5s fade forwards;
-  animation: 2.5s fade forwards; }
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-@keyframes fade {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+  background-position: 100% 0; }
   body.body_light {
+    width: auto;
+    height: auto;
     background-color: #fff;
     background-image: none;
     color: #2f2f38; }
@@ -68,31 +55,38 @@ nav {
   width: 190px;
   height: 210px;
   background-color: rgba(0, 30, 75, 0.25);
-  z-index: 2; }
-  nav > h2 {
-    -webkit-margin-before: 0.8em;
-    margin-block-start: 0.8em;
-    -webkit-margin-after: 0.8em;
-    margin-block-end: 0.8em;
-    -webkit-margin-start: 20px;
-    margin-inline-start: 20px; }
-  nav > ul {
-    -webkit-margin-before: 1em;
-    margin-block-start: 1em;
-    -webkit-margin-after: 1em;
-    margin-block-end: 1em;
-    -webkit-padding-start: 20px;
-    padding-inline-start: 20px; }
-    nav > ul > li {
-      padding: 7px 0;
-      list-style: none; }
-      nav > ul > li > a {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 999; }
+  nav.nav_light {
+    background-image: url("../images/background_nav.jpg");
+    background-size: cover;
+    background-position: 100% 0;
+    background-blend-mode: hard-light; }
+    @media screen and (max-width: 1024px) {
+      nav.nav_light {
+        position: absolute; } }
+  nav h1 {
+    -webkit-margin-before: 1.9rem;
+    margin-block-start: 1.9rem;
+    -webkit-margin-start: 2rem;
+    margin-inline-start: 2rem;
+    font-size: 2.6rem; }
+  nav ul {
+    -webkit-margin-before: 1.4rem;
+    margin-block-start: 1.4rem;
+    -webkit-margin-after: 1.4rem;
+    margin-block-end: 1.4rem;
+    -webkit-padding-start: 2rem;
+    padding-inline-start: 2rem; }
+    nav ul li {
+      padding: 0.7rem 0; }
+      nav ul li a {
         position: relative;
-        display: inline-block;
         color: #fff;
         letter-spacing: 0.4rem;
         text-decoration: none; }
-        nav > ul > li > a::after {
+        nav ul li a::after {
           content: "";
           position: absolute;
           top: 9px;
@@ -103,31 +97,186 @@ nav {
           transform: scale(0, 1);
           transform-origin: left top;
           transition: transform 0.2s; }
-        nav > ul > li > a:hover::after {
+        nav ul li a:hover::after {
           transform: scale(1, 1); }
 
-.nav_light {
-  background-image: url("../images/background_nav.jpg");
-  background-size: cover;
-  background-position: 100% 0;
-  background-blend-mode: hard-light; }
+main {
+  width: calc(100% - 40px);
+  height: auto;
+  padding: 0 20px; }
   @media screen and (max-width: 1024px) {
-    .nav_light {
-      position: absolute; } }
+    main {
+      padding: 230px 20px 0px; } }
+  main article {
+    width: calc(100% - 210px);
+    padding-left: 210px; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      main article {
+        width: 80%;
+        height: calc(100% - 20px);
+        padding: 20px 10% 0; } }
+    @media screen and (max-width: 767px) {
+      main article {
+        width: 90%;
+        height: calc(100% - 20px);
+        padding: 20px 5% 0; } }
+    main article section {
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      margin: 50px 20px 70px;
+      opacity: 0;
+      -webkit-animation: fadein 1.6s ease forwards;
+      animation: fadein 1.6s ease forwards; }
+      @media screen and (max-width: 1024px) {
+        main article section {
+          width: 100%;
+          margin: 0px; } }
 
-small {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  padding: 0;
-  letter-spacing: 2rem;
-  mix-blend-mode: lighten; }
-  @media screen and (max-width: 1024px) {
-    small {
-      display: none; } }
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+      main article section .title {
+        color: #2f2f38;
+        font-size: 3.2rem;
+        font-weight: 300;
+        letter-spacing: 1.2rem;
+        line-height: 4.2rem;
+        margin: 0px;
+        text-align: right;
+        border-bottom: solid 1px; }
+      main article section .profile {
+        margin: 50px 0px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        main article section .profile .information {
+          width: 280px; }
+          main article section .profile .information h3 {
+            font-weight: 400;
+            line-height: 2.8rem;
+            letter-spacing: 1.3rem;
+            padding: 0 0.7rem; }
+          main article section .profile .information p {
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+            margin: 0.9rem 0;
+            padding: 0 0.7rem; }
+        main article section .profile .avatar {
+          position: relative;
+          width: 50%;
+          min-width: 280px;
+          height: 271px; }
+          @media screen and (max-width: 767px) {
+            main article section .profile .avatar {
+              width: 100%; } }
+          main article section .profile .avatar img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover; }
+      main article section .history h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+        letter-spacing: 1rem;
+        margin-bottom: 0.9rem;
+        padding: 0 0.7rem; }
+      main article section .history dl {
+        line-height: 2.6rem;
+        padding-left: 0.7rem; }
+        main article section .history dl dt {
+          float: left;
+          color: #878787;
+          padding: 0 0.7rem; }
+        main article section .history dl dd {
+          font-size: 1.4rem;
+          margin-left: 6rem; }
+        main article section .history dl dt,
+        main article section .history dl dd {
+          margin-bottom: 0.4rem; }
+      main article section .skills {
+        margin: 50px 0; }
+        main article section .skills h3 {
+          width: 100%;
+          font-size: 1.6rem;
+          font-weight: 400;
+          line-height: 2.8rem;
+          letter-spacing: 1rem;
+          margin-bottom: 1.2rem;
+          padding: 0 0.7rem; }
+        main article section .skills dl {
+          display: inline-block;
+          width: 260px;
+          line-height: 3rem;
+          margin-right: 1.6rem;
+          margin-left: 1rem; }
+          main article section .skills dl dt,
+          main article section .skills dl dd {
+            margin-bottom: 0.6em; }
+          main article section .skills dl dt {
+            width: 150px;
+            float: left;
+            font-size: 1.4rem;
+            letter-spacing: 0.3rem;
+            padding-left: 0.5rem; }
+          main article section .skills dl dd {
+            position: relative;
+            margin-left: 150px;
+            color: #2f2f38; }
+            main article section .skills dl dd::before {
+              content: "★★★★★";
+              position: absolute;
+              top: 0;
+              color: #ebebeb;
+              z-index: -1; }
+      main article section .image {
+        width: 100%;
+        margin-top: 85px; }
+        main article section .image a {
+          text-decoration: none; }
+          main article section .image a img {
+            width: 100%;
+            height: 100%;
+            transition: 0.6s ease; }
+            main article section .image a img:hover {
+              opacity: 0.5; }
+      main article section .text h3 {
+        width: 360px;
+        font-weight: 400;
+        line-height: 2.8rem;
+        letter-spacing: 0.8rem;
+        margin: 1.2rem 0; }
+        main article section .text h3.sub {
+          width: 100%;
+          font-weight: 300;
+          font-size: 1.2rem;
+          text-align: right;
+          letter-spacing: 0.6rem;
+          margin: 1.2rem 0 0; }
+          main article section .text h3.sub > a {
+            color: #491de9;
+            text-decoration: none;
+            border-bottom: solid 1px; }
+            main article section .text h3.sub > a:hover {
+              color: #b3b5d5; }
+      main article section .text p {
+        display: inline-block;
+        font-size: 1.4rem;
+        letter-spacing: 0.3rem;
+        line-height: 2.4rem; }
 
 .sns_link {
   position: fixed;
@@ -145,156 +294,6 @@ small {
     width: 25px;
     height: 25px;
     padding: 0 2px; }
-
-main {
-  position: absolute;
-  top: 0px;
-  left: 230px;
-  width: calc(100% - 230px);
-  box-sizing: border-box;
-  padding: 50px; }
-  @media screen and (max-width: 1024px) {
-    main {
-      left: 0px;
-      width: 100%;
-      padding: 260px 40px 50px; } }
-  main > article > h1 {
-    color: #878787;
-    font-size: 4rem;
-    font-weight: 300;
-    letter-spacing: 1.2rem;
-    -webkit-animation: fadein 2s ease forwards;
-    animation: fadein 2s ease forwards;
-    text-align: right; }
-  main > article > h2 {
-    color: #2f2f38;
-    max-width: 400px;
-    font-weight: 300;
-    letter-spacing: 0.6rem; }
-  main > article > section {
-    width: 100%;
-    margin: 70px 0;
-    opacity: 0;
-    -webkit-animation: fadein 2s ease forwards;
-    animation: fadein 2s ease forwards; }
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translateY(20px); }
-  to {
-    opacity: 1;
-    transform: translateY(0); } }
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translateY(-20px); }
-  to {
-    opacity: 1;
-    transform: translateY(0); } }
-    main > article > section > h1.name {
-      font-weight: 300;
-      letter-spacing: 0.8rem; }
-    main > article > section > .avatar {
-      height: 200px;
-      max-width: 323px;
-      margin: 50px 0 15px; }
-      main > article > section > .avatar > img {
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover; }
-    main > article > section > .history {
-      margin: 20px 0; }
-      main > article > section > .history > dl {
-        line-height: 1.8em; }
-        main > article > section > .history > dl > dt {
-          float: left;
-          color: #878787; }
-        main > article > section > .history > dl > dd {
-          max-width: 700px;
-          margin-left: 60px;
-          font-size: 1.4rem; }
-        main > article > section > .history > dl > dt,
-        main > article > section > .history > dl dd {
-          margin-bottom: 5px; }
-    main > article > section > .skills {
-      padding: 30px 0 0; }
-      main > article > section > .skills > h3 {
-        max-width: 700px;
-        font-size: 1.8rem;
-        font-weight: 300;
-        line-height: 2.8rem;
-        letter-spacing: 0.8rem;
-        margin-bottom: 24px;
-        border-bottom: 1px solid; }
-      main > article > section > .skills > dl {
-        display: inline-block;
-        line-height: 2em;
-        margin-right: 3em; }
-        main > article > section > .skills > dl > dt,
-        main > article > section > .skills > dl dd {
-          margin-bottom: 0.6em;
-          border-bottom: 1px solid #878787; }
-        main > article > section > .skills > dl > dt {
-          width: 140px;
-          float: left;
-          font-weight: 500;
-          padding-left: 0.5rem; }
-        main > article > section > .skills > dl > dd {
-          position: relative;
-          padding: 0 1rem;
-          margin-left: 140px; }
-          main > article > section > .skills > dl > dd::before {
-            content: "★★★★★";
-            position: absolute;
-            top: 0;
-            left: 1rem;
-            color: #ebebeb;
-            border-bottom: 1px solid #878787;
-            z-index: -1; }
-    main > article > section > ul {
-      margin: 10px 0 24px; }
-      main > article > section > ul > li {
-        display: inline-block;
-        line-height: 2.8rem;
-        padding: 0 1.6rem;
-        background-color: #ebebeb; }
-    main > article > section > .text {
-      max-width: 800px;
-      margin: 10px 0;
-      border-bottom: 1px solid #878787; }
-      main > article > section > .text > h3 {
-        font-size: 1.8rem;
-        font-weight: 300;
-        line-height: 2.8rem;
-        letter-spacing: 0.6rem;
-        margin: 20px 0 5px; }
-      main > article > section > .text > p {
-        font-size: 1.4rem;
-        letter-spacing: 0.3rem;
-        line-height: 2.8rem; }
-    main > article > section > .image {
-      max-width: 800px;
-      width: 100%;
-      height: auto; }
-      main > article > section > .image > h2 {
-        position: absolute;
-        -webkit-padding-start: 0.5em;
-        padding-inline-start: 0.5em;
-        -webkit-padding-end: 0.5em;
-        padding-inline-end: 0.5em;
-        color: #fff;
-        font-weight: 300;
-        letter-spacing: 0.5rem;
-        background-color: #2f2f38;
-        z-index: 1; }
-      main > article > section > .image > a {
-        text-decoration: none; }
-        main > article > section > .image > a > img {
-          width: 100%;
-          height: auto;
-          transition: 0.8s ease; }
-          main > article > section > .image > a > img:hover {
-            opacity: 0.5; }
+    .sns_link > ul > li > a > span > svg:hover {
+      opacity: 0.3;
+      transition: 0.4s; }
