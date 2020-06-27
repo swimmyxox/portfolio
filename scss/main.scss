@@ -27,6 +27,7 @@ $purple: #491de9;
   }
 }
 
+// ---------- html body ----------
 html {
   height: 100%;
   width: 100%;
@@ -168,20 +169,21 @@ main {
 
     @include tablet {
       width: 80%;
-      height: calc(100% - 20px);
-      padding: 20px 10% 0;
+      height: calc(100% - 80px);
+      padding: 40px 10%;
     }
 
     @include phone {
       width: 90%;
-      height: calc(100% - 20px);
-      padding: 20px 5% 0;
+      height: calc(100% - 80px);
+      padding: 40px 5%;
     }
 
     section {
       width: calc(100% - 40px);
       max-width: 1100px;
       margin: 50px 20px 70px;
+      border-bottom: solid 1px;
       opacity: 0;
       -webkit-animation: fadein 1.6s ease forwards;
       animation: fadein 1.6s ease forwards;
@@ -301,7 +303,7 @@ main {
         }
       }
 
-      .skills {
+      .skill {
         margin: 50px 0;
 
         h3 {
@@ -310,9 +312,8 @@ main {
           font-weight: 400;
           line-height: 2.8rem;
           letter-spacing: 1rem;
-          margin-bottom: 1.2rem;
+          margin-bottom: 0.2rem;
           padding: 0 0.7rem;
-          //border-bottom: solid 1px $pale-gray;
         }
 
         dl {
@@ -320,11 +321,11 @@ main {
           width: 260px;
           line-height: 3rem;
           margin-right: 1.6rem;
-          margin-left: 1rem;
+          margin-left: 0.6rem;
 
           dt,
           dd {
-            margin-bottom: 0.6em;
+            margin-top: 0.6em;
           }
 
           dt {
@@ -332,7 +333,7 @@ main {
             float: left;
             font-size: 1.4rem;
             letter-spacing: 0.3rem;
-            padding-left: 0.5rem;
+            padding-left: 0.7rem;
           }
 
           dd {
@@ -379,16 +380,23 @@ main {
           line-height: 2.8rem;
           letter-spacing: 0.8rem;
           margin: 1.2rem 0;
+        }
 
-          &.sub {
+        p {
+          display: inline-block;
+          font-size: 1.4rem;
+          letter-spacing: 0.3rem;
+          line-height: 2.4rem;
+
+          &.design {
             width: 100%;
             font-weight: 300;
             font-size: 1.2rem;
             text-align: right;
             letter-spacing: 0.6rem;
-            margin: 1.2rem 0 0;
+            margin: 1.2rem 0;
 
-            > a {
+            a {
               color: $purple;
               text-decoration: none;
               border-bottom: solid 1px;
@@ -398,13 +406,6 @@ main {
               }
             }
           }
-        }
-
-        p {
-          display: inline-block;
-          font-size: 1.4rem;
-          letter-spacing: 0.3rem;
-          line-height: 2.4rem;
         }
       }
     }

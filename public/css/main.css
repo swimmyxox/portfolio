@@ -113,17 +113,18 @@ main {
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       main article {
         width: 80%;
-        height: calc(100% - 20px);
-        padding: 20px 10% 0; } }
+        height: calc(100% - 80px);
+        padding: 40px 10%; } }
     @media screen and (max-width: 767px) {
       main article {
         width: 90%;
-        height: calc(100% - 20px);
-        padding: 20px 5% 0; } }
+        height: calc(100% - 80px);
+        padding: 40px 5%; } }
     main article section {
       width: calc(100% - 40px);
       max-width: 1100px;
       margin: 50px 20px 70px;
+      border-bottom: solid 1px;
       opacity: 0;
       -webkit-animation: fadein 1.6s ease forwards;
       animation: fadein 1.6s ease forwards; }
@@ -207,36 +208,36 @@ main {
         main article section .history dl dt,
         main article section .history dl dd {
           margin-bottom: 0.4rem; }
-      main article section .skills {
+      main article section .skill {
         margin: 50px 0; }
-        main article section .skills h3 {
+        main article section .skill h3 {
           width: 100%;
           font-size: 1.6rem;
           font-weight: 400;
           line-height: 2.8rem;
           letter-spacing: 1rem;
-          margin-bottom: 1.2rem;
+          margin-bottom: 0.2rem;
           padding: 0 0.7rem; }
-        main article section .skills dl {
+        main article section .skill dl {
           display: inline-block;
           width: 260px;
           line-height: 3rem;
           margin-right: 1.6rem;
-          margin-left: 1rem; }
-          main article section .skills dl dt,
-          main article section .skills dl dd {
-            margin-bottom: 0.6em; }
-          main article section .skills dl dt {
+          margin-left: 0.6rem; }
+          main article section .skill dl dt,
+          main article section .skill dl dd {
+            margin-top: 0.6em; }
+          main article section .skill dl dt {
             width: 150px;
             float: left;
             font-size: 1.4rem;
             letter-spacing: 0.3rem;
-            padding-left: 0.5rem; }
-          main article section .skills dl dd {
+            padding-left: 0.7rem; }
+          main article section .skill dl dd {
             position: relative;
             margin-left: 150px;
             color: #2f2f38; }
-            main article section .skills dl dd::before {
+            main article section .skill dl dd::before {
               content: "★★★★★";
               position: absolute;
               top: 0;
@@ -259,24 +260,24 @@ main {
         line-height: 2.8rem;
         letter-spacing: 0.8rem;
         margin: 1.2rem 0; }
-        main article section .text h3.sub {
-          width: 100%;
-          font-weight: 300;
-          font-size: 1.2rem;
-          text-align: right;
-          letter-spacing: 0.6rem;
-          margin: 1.2rem 0 0; }
-          main article section .text h3.sub > a {
-            color: #491de9;
-            text-decoration: none;
-            border-bottom: solid 1px; }
-            main article section .text h3.sub > a:hover {
-              color: #b3b5d5; }
       main article section .text p {
         display: inline-block;
         font-size: 1.4rem;
         letter-spacing: 0.3rem;
         line-height: 2.4rem; }
+        main article section .text p.design {
+          width: 100%;
+          font-weight: 300;
+          font-size: 1.2rem;
+          text-align: right;
+          letter-spacing: 0.6rem;
+          margin: 1.2rem 0; }
+          main article section .text p.design a {
+            color: #491de9;
+            text-decoration: none;
+            border-bottom: solid 1px; }
+            main article section .text p.design a:hover {
+              color: #b3b5d5; }
 
 .sns_link {
   position: fixed;
