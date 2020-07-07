@@ -255,6 +255,10 @@ section {
     line-height: 2.2rem;
     margin: 0.9rem 0;
     padding: 0 0.7rem;
+
+    &.detail {
+      font-weight: 400;
+    }
   }
 }
 
@@ -320,6 +324,14 @@ section {
     letter-spacing: 1rem;
     margin-bottom: 0.2rem;
     padding: 0 0.7rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.5rem;
+    margin-top: 1.6rem;
+    padding-left: 1.3rem;
   }
 
   dl {

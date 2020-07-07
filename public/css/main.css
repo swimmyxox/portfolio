@@ -179,6 +179,8 @@ section {
     line-height: 2.2rem;
     margin: 0.9rem 0;
     padding: 0 0.7rem; }
+    .information p.detail {
+      font-weight: 400; }
 
 .avatar {
   position: relative;
@@ -227,6 +229,12 @@ section {
     letter-spacing: 1rem;
     margin-bottom: 0.2rem;
     padding: 0 0.7rem; }
+  .skill p {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.5rem;
+    margin-top: 1.6rem;
+    padding-left: 1.3rem; }
   .skill dl {
     display: inline-block;
     width: 260px;
