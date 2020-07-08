@@ -286,7 +286,11 @@ section {
   .text h2 a {
     font-size: 1.4rem;
     letter-spacing: 0.4rem;
-    color: #491de9; }
+    color: #491de9;
+    text-decoration: none;
+    border-bottom: solid 1px; }
+    .text h2 a:hover {
+      color: #b3b5d5; }
 
 .text p {
   font-size: 1.4rem;
@@ -320,11 +324,11 @@ section {
       position: absolute;
       top: 20px;
       left: calc(100% - 85px); } }
-  .sns_link > ul > li {
+  .sns_link ul li {
     display: inline-block;
     width: 25px;
     height: 25px;
     padding: 0 2px; }
-    .sns_link > ul > li > a > span > svg:hover {
+    .sns_link ul li a span svg:hover {
       opacity: 0.3;
       transition: 0.4s; }

@@ -18,3 +18,14 @@ $(document).ready(function () {
     $el.ripples("drop", x, y, dropRadius, strength);
   }, 500);
 });
+
+// hover effect mobile
+$(function () {
+  $("a")
+    .bind("touchstart", function () {
+      $(this).addClass("hover");
+    })
+    .bind("touchend", function () {
+      $(this).removeClass("hover");
+    });
+});

@@ -407,6 +407,12 @@ section {
       font-size: 1.4rem;
       letter-spacing: 0.4rem;
       color: $purple;
+      text-decoration: none;
+      border-bottom: solid 1px;
+
+      &:hover {
+        color: $pale-blue;
+      }
     }
   }
 
@@ -455,15 +461,21 @@ section {
     left: calc(100% - 85px);
   }
 
-  > ul > li {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    padding: 0 2px;
+  ul {
+    li {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      padding: 0 2px;
 
-    > a > span > svg:hover {
-      opacity: 0.3;
-      transition: 0.4s;
+      a {
+        span {
+          svg:hover {
+            opacity: 0.3;
+            transition: 0.4s;
+          }
+        }
+      }
     }
   }
 }
