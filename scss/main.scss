@@ -43,7 +43,7 @@ body {
   font-weight: 300;
   letter-spacing: 0.3rem;
   overflow-y: scroll;
-  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   background-color: $pale-blue;
   background-image: url("../images/background_large.jpg");
   background-size: cover;
@@ -470,9 +470,11 @@ section {
 
       a {
         span {
-          svg:hover {
-            opacity: 0.3;
-            transition: 0.4s;
+          svg {
+            &:hover {
+              opacity: 0.3;
+              transition: 0.4s;
+            }
           }
         }
       }
